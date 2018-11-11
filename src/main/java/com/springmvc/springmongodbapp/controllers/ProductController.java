@@ -27,4 +27,5 @@ public class ProductController {
     public List<Product> addProduct(@RequestBody Product product) {
         return productService.addProduct(product);
     }
+
 }
