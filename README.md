@@ -1,2 +1,2 @@
-# spring-mongodb-app
-spring-mongodb-app
+# springboot-mongo
+Latest Program for Springboot mongo
