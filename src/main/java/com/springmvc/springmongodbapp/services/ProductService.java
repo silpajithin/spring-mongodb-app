@@ -34,4 +34,13 @@ public class ProductService {
         System.out.println(product);
         return productRepository.findAll();
     }
+
+    public void deleteProduct(String id) {
+       productRepository.deleteById(id);
+    }
+
+   /* public List<Product> updateProduct(Product product) {
+        productRepository.
+        return productRepository.findAll();
+    }*/
 }
