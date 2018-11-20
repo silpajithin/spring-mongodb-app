@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+import static java.lang.Boolean.TRUE;
+
 @Service
 public class ProductService {
 
@@ -39,8 +41,14 @@ public class ProductService {
        productRepository.deleteById(id);
     }
 
-   /* public List<Product> updateProduct(Product product) {
-        productRepository.
-        return productRepository.findAll();
-    }*/
+   public Product getProduct(String id) {
+
+      //  if(productRepository.findById(id).isPresent()==TRUE)
+            return productRepository.findById(id).get();
+
+    }
+
+    public void updateProduct(String id,Product product) {
+       productRepository.save(product);
+    }
 }

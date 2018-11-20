@@ -19,14 +19,30 @@ public class ProductController {
         return productService.getAllProducts();
     }
 
+    @GetMapping(value = "/Products/{id}")
+    public Product getProduct(@PathVariable("id") String id) {
+      return productService.getProduct(id);
+    }
+
     // @RequestMapping(method = RequestMethod.POST,value="/Products", consumes = MediaType.APPLICATION_JSON_VALUE)
     @PostMapping(value = "/Products")
     public List<Product> addProduct(@RequestBody Product product) {
         return productService.addProduct(product);
     }
 
-    @DeleteMapping(value="/Products/{id}")
-    public void deleteProduct(@PathVariable String id){
+    @DeleteMapping(value = "/Products/{id}")
+    public void deleteProduct(@PathVariable String id) {
         productService.deleteProduct(id);
     }
+
+    @PutMapping(value="/Products/{id}")
+    public void updateProduct(@RequestBody Product product,@PathVariable String id){
+        productService.updateProduct(id,product);
+    }
+
+
+
+
+
+
 }
